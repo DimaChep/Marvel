@@ -1,21 +1,28 @@
 // Получить карточку персонажа
-function getCharacterCard(getCharacterCard) {
+
+function getCharacterCard(character) {
   return `
-  <div class="card mb-3 col-sm-12 col-md-6 col-lg-4">
-    <div class="row g-0">
-        <div class="col-4">
-            <img src="${character.thumbnail}" style="max-width: 100%" alt="${character.name}">
-        </div>
-        <div class="col-8">
-            <div class="card-body">
-                <h5 class="card-title">${character.name}</h5>
-                <button type="button data-bs-toggle="modal" data-bs-target="example-Modal-${character.id}" class="btn btn-secondary btn-sm">
-                Подробнее</button>
+        <div class="card mb-3 col-sm-12 col-md-6 col-lg-4">
+            <div class="row g-0">
+                <div class="col-4">
+                    <img src="${character.thumbnail}"
+                         style="max-width: 100%;"
+                         alt="${character.name}"
+                    >
+                </div>
+                <div class="col-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${character.name}</h5>
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-${character.id}"
+                                class="btn btn-secondary btn-sm"
+                        >Подробнее</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  </div>
-  `;
+        `;
 }
 
 // Получить модальное окно персонажа
@@ -84,7 +91,7 @@ function getCharacterCards(characters) {
 
 // Получим массив модальных окон персонажей
 
-function getCharacterModal(characters) {
+function getCharacterModals(characters) {
   let characterModals = [];
   for (let i = 0; i < characters.length; i++) {
     let character = characters[i];
